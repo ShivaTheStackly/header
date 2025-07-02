@@ -463,7 +463,7 @@ body {
 @media (max-width: 768px) {
   .top-navbar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 15px;
   }
 
@@ -483,18 +483,35 @@ body {
     margin: 0;
   }
 
+  
+}
+@media (max-width: 768px) {
   .category-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 10px;
+    justify-items: center;
+    padding: 15px;
+  }
+
+  .category-item {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .category-item img {
     width: 50px;
     height: 50px;
+    object-fit: contain;
+    margin-bottom: 5px;
   }
 
   .category-item span {
     font-size: 13px;
+    color: #555;
   }
 }
+
 </style>
