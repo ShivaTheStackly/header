@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Stackly - Organic Store</title>
+  <title>CRISOP - Organic Store</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
   <header>
-    <div class="top-nav">
+    <div class="menu">
       <div class="logo"> <span>Stackly</span></div>
       <div class="search-bar">
         <input type="text" placeholder="Search for product...">
@@ -30,43 +30,42 @@
         <li>Product </li>
         <li>My Cart</li>
       </ul>
-      <div class="right-info">
+      <div class="right-menu">
         <div><i class="fas fa-phone-alt"></i> 6379777691</div>
         <div><i class="fas fa-map-marker-alt"></i> Select a Location</div>
         <a href="index.html"><div class="offer">Home Page</div></a>
       </div>
     </nav>
-     <div class="category-bar">
-    <div class="category-item">
+     <div class="container-box">
+    <div class="image">
       <img src="https://bansalsupermarket.com/upload/category/grocery_staples/loose_grocessary.png" alt="Grocery"/>
       <span>Stables</span>
     </div>
-    <div class="category-item">
+    <div class="image">
       <img src="https://cdn-icons-png.flaticon.com/512/859/859354.png" alt="Mobiles"/>
       <span>Snacks</span>
     </div>
-    <div class="category-item">
+    <div class="image">
       <img src="https://cdn-icons-png.flaticon.com/512/3906/3906712.png" alt="Fashion"/>
       <span>Pakaging Food</span>
     </div>
-    <div class="category-item">
+    <div class="image">
       <img src="https://i5.walmartimages.com/asr/c76621fe-1c1f-4868-99c3-a9acc8511e4b.ed6e3adb448a20d879719c38d78c2ebc.jpeg" alt="Electronics"/>
       <span>Personal Baby Care</span>
     </div>
-    <div class="category-item">
+    <div class="image">
       <img src="https://tse3.mm.bing.net/th/id/OIP.9Oa5RnAGOLmePfHWpBSQZAHaHf?pid=Api&P=0&h=180" alt="Furniture"/>
       <span>House Hold Care</span>
     </div>
-    <div class="category-item">
+    <div class="image">
       <img src="https://body.ba/pictures/mlijeko_i_jaja.jpg" alt="Flights"/>
       <span>Dairy & Eggs</span>
     </div>
-    <div class="category-item">
+    <div class="image">
       <img src="https://tse3.mm.bing.net/th/id/OIP.u2S27xyWxXksX9fIuT1EkQHaHa?pid=Api&P=0&h=180" alt="Toys"/>
       <span>Home & Kitchen</span>
     </div>
   </div>
-  
   </header>
   
 
@@ -101,11 +100,54 @@
     </div>
   </section>
   <section>
-    <div class="label">
-        <div class="txt"><h3>Shop by Categories</h3></div>
-        <div class="image"><img src="https://ninetheme.com/themes/crisop/wp-content/uploads/2022/05/products-53-scaled-100x100.webp" alt=""></div>
+    <div class="campaign-container">
+    <div class="campaign-left">
+      <div>
+        <h3>3 Products</h3>
+        <h2>-%20 June Campaign</h2>
+        <p>The products on the right are specific to the campaign. These products come automatically with the campaign option. Create your campaign and select products!</p>
+      </div>
+      <button class="order-btn">ORDER NOW!</button>
     </div>
+<div class="grid-container">
+  <div class="product-box">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.xW2SAK_9PbhzSXaH_7TTEwHaE8?pid=Api&P=0&h=180" alt="Banana">
+    <div class="product-details">
+      <h4>Marketside Bananas, Bunch</h4>
+      <p>1 KG <span class="price">Rs 120</span></p>
+      <ul>
+        <li>✔ Free Worldwide Shipping</li>
+        <li>✔ 2hrs Return</li>
+        <li>✔ Member Discount</li>
+      </ul>
+      <div class="tag">TRENDS</div>
+      <button onclick="showPopup('Marketside Bananas, Bunch', 'Rs 120', 'https://tse1.mm.bing.net/th/id/OIP.xW2SAK_9PbhzSXaH_7TTEwHaE8?pid=Api&P=0&h=180')">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-box">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.sFgx0ghC7KharP5Aqu77fAHaE7?pid=Api&P=0&h=180" alt="Lemon">
+    <div class="product-details">
+      <h4>Marketside Lemon, Bunch</h4>
+      <p>1 KG <span class="price">Rs 200</span></p>
+      <ul>
+        <li>✔ Free Worldwide Shipping</li>
+        <li>✔ 2hrs Return</li>
+        <li>✔ Member Discount</li>
+      </ul>
+      <button onclick="showPopup('Marketside Lemon, Bunch', 'Rs 200', 'https://tse2.mm.bing.net/th/id/OIP.sFgx0ghC7KharP5Aqu77fAHaE7?pid=Api&P=0&h=180')">Add to Cart</button>
+    </div>
+  </div>
+</div>
+   
+    
   </section>
+  <footer class="theme-footer">
+  <div class="footer-overlay">
+    <h2 class="footer-heading">Do you love this shop?</h2>
+    <a href="#" class="footer-btn">Start Purchase Now!</a>
+  </div>
+</footer>
 </body>
 </html>
 <style>body {
@@ -119,7 +161,7 @@ header {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.top-nav {
+.menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -179,6 +221,7 @@ header {
   list-style: none;
   display: flex;
   gap: 20px;
+  color: white;
 }
 
 .nav-links li {
@@ -197,13 +240,13 @@ header {
   transition: 0.3s;
 }
 
-.right-info {
+.right-menu {
   display: flex;
   gap: 20px;
   align-items: center;
 }
 
-.right-info div {
+.right-menu div {
   font-size: 14px;
 }
 
@@ -223,7 +266,7 @@ header {
 }
 .banner-slider {
   position: relative;
-  height: 500px;
+  height: 550px;
   overflow: hidden;
   border-radius: 8px;
   flex: 2;
@@ -262,8 +305,8 @@ header {
 }
 .btn {
   display: inline-block;
-  background-color: #fdbb00;      /* Yellow background */
-  color: #000;                    /* Black text */
+  background-color: #fdbb00;     
+  color: #000;                    
   padding: 10px 20px;
   border-radius: 6px;
   text-decoration: none;
@@ -274,8 +317,8 @@ header {
 }
 
 .btn:hover {
-  background-color: #ff9800;     /* Darker yellow on hover */
-  transform: scale(1.05);        /* Slight zoom on hover */
+  background-color: #ff9800;  
+  transform: scale(1.05);        
   color: #fff;
 }
 
@@ -303,7 +346,7 @@ header {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.45); /* dark overlay */
+  background: rgba(0, 0, 0, 0.45); 
   z-index: 0;
 }   
 .side-card:hover {
@@ -334,8 +377,8 @@ header {
   background: #f3f3f3;
 }
 
-/*  Category Bar */
-.category-bar {
+
+.container-box {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -347,7 +390,7 @@ header {
   animation: fadeInBottom 1.2s ease-out;
 }
 
-.category-item {
+.image {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -359,25 +402,25 @@ header {
   
 }
 
-.category-item img {
+.image img {
   width: 50px;
   height: 50px;
   object-fit: contain;
   margin-bottom: 5px;
 }
 
-.category-item span {
+.image span {
   font-size: 14px;
   font-weight: 500;
   color: #111;
 }
 
-/* Hover Animation */
-.category-item:hover {
+
+.image:hover {
   transform: translateY(-4px);
   color: #2874f0;
 }
-/* Animation Effects */
+
 @keyframes fadeInTop {
   from {
     opacity: 0;
@@ -414,19 +457,19 @@ header {
   }
 }
 
-/* Delay each item animation */
-.category-item:nth-child(1) { animation-delay: 0.2s; }
-.category-item:nth-child(2) { animation-delay: 0.4s; }
-.category-item:nth-child(3) { animation-delay: 0.6s; }
-.category-item:nth-child(4) { animation-delay: 0.8s; }
-.category-item:nth-child(5) { animation-delay: 1s; }
-.category-item:nth-child(6) { animation-delay: 1.2s; }
-.category-item:nth-child(7) { animation-delay: 1.4s; }
-.category-item:nth-child(8) { animation-delay: 1.6s; }
 
-/* Mobile view */
+.image:nth-child(1) { animation-delay: 0.2s; }
+.image:nth-child(2) { animation-delay: 0.4s; }
+.image:nth-child(3) { animation-delay: 0.6s; }
+.image:nth-child(4) { animation-delay: 0.8s; }
+.image:nth-child(5) { animation-delay: 1s; }
+.image:nth-child(6) { animation-delay: 1.2s; }
+.image:nth-child(7) { animation-delay: 1.4s; }
+.image:nth-child(8) { animation-delay: 1.6s; }
+
+
 @media (max-width: 768px) {
-  .top-navbar {
+  .menu {
     flex-direction: column;
     align-items: center;
     padding: 15px;
@@ -451,33 +494,215 @@ header {
   
 }
 @media (max-width: 768px) {
-  .category-bar {
+  .container-box {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 10px;
     justify-items: center;
     padding: 15px;
   }
 
-  .category-item {
+  .image {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-  .category-item img {
+  .image img {
     width: 50px;
     height: 50px;
     object-fit: contain;
     margin-bottom: 5px;
   }
 
-  .category-item span {
+  .image span {
     font-size: 13px;
     color: #555;
   }
 }
+.campaign-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding:20px 80px;
+    }
+
+    .campaign-left {
+      background-color: #FF7143;
+      color: white;
+      flex: 1 1 280px;
+      padding: 30px;
+      border-radius: 10px;
+      background-image: url('https://cdn.pixabay.com/photo/2017/01/20/15/06/citrus-1995056_1280.jpg');
+      background-size: cover;
+      background-position: bottom;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 300px;
+    }
+
+    .campaign-left h3 {
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .campaign-left h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .campaign-left p {
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    .campaign-left .order-btn {
+      background-color: black;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: fit-content;
+    }
+
+    .campaign-left .order-btn:hover {
+      background-color: #333;
+    }
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 30px;
+}
+
+.product-box {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 260px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
+}
+
+.product-box:hover {
+  transform: translateY(-5px);
+}
+
+.product-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.product-details {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.product-details h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.product-details p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.price {
+  float: right;
+  font-weight: bold;
+  color: #0f9d58;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.tag {
+  background: #0f9d58;
+  color: #fff;
+  padding: 3px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+button {
+  background-color: #0f9d58;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #0c7a42;
+}
+.theme-footer {
+  position: relative;
+  background: url('https://suminterindiaorganics.com/wp-content/uploads/2018/05/5-Key-Environmental-Benefits-Of-Organic-Farming.jpg') no-repeat center center/cover;
+  height: 300px;
+  display: flex;
+  text-align: center;
+  overflow: hidden;
+}
+
+.footer-overlay {
+  background-color: rgba(0, 0, 0, 0.6); 
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-heading {
+  color: #fff;
+  font-size: 32px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin-bottom: 20px;
+}
+
+.footer-btn {
+  text-decoration: none;
+  padding: 12px 24px;
+  color: #fff;
+  border: 2px solid #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.footer-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
 </style>
 <script>
   let currentSlide = 0;
@@ -491,9 +716,8 @@ header {
       }
     });
   }
-
-  setInterval(() => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  }, 4000); // changes every 4 seconds
+function showPopup(title, price, image) {
+  alert(`Product: ${title}\nPrice: ${price}`); 
+}
+  
 </script>
