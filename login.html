@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Logdy - Login & Register</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url('login bg.jpg') no-repeat ;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .container h2, .container h3 {
+      text-align: center;
+    }
+
+    .container h3 {
+      margin-bottom: 30px;
+      font-weight: normal;
+      color: #555;
+    }
+
+    .txt {
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .txt input {
+      width: 100%;
+      padding: 10px 40px 10px 10px;
+      border: none;
+      border-bottom: 1px solid #aaa;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .txt i {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: #999;
+    }
+
+    .checkbox-label {
+      font-size: 13px;
+      color: #555;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background: #2874f0;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .social-login {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .social-login a {
+      text-decoration: none;
+      color: #fff;
+      padding: 10px;
+      width: 48px;
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    .google { background: #db4437; }
+    .linkedin { background: #0077b5; }
+
+    .toggle-link {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 13px;
+      color: #555;
+      cursor: pointer;
+    }
+
+    .toggle-link span {
+      color: #2874f0;
+      font-weight: bold;
+    }
+
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div id="Signup">
+    <h2>Stackly</h2>
+    <h3>CREATE AN ACCOUNT</h3>
+
+    <div class="txt">
+      <input type="text" id="fullname" placeholder="Full Name" required />
+      <i class="fas fa-user"></i>
+    </div>
+
+    <div class="txt">
+      <input type="email" id="email" placeholder="Email Address" required />
+      <i class="fas fa-envelope"></i>
+    </div>
+
+    <div class="txt">
+      <input type="password" id="password" placeholder="Password" required />
+      <i class="fas fa-lock"></i>
+    </div>
+
+    <div class="txt">
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+      <i class="fas fa-lock"></i>
+    </div>
+
+    <div class="txt">
+      <input type="checkbox" id="terms" />
+      <label for="terms" class="checkbox-label">I agree to the terms of service</label>
+    </div>
+
+    <button class="btn" onclick="validateRegister()">Register</button>
+
+    <div style="text-align: center; margin: 15px 0;">Or Login With</div>
+    <div class="social-login">
+      <a href="#" class="google"><i class="fab fa-google"></i></a>
+      <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+    <div class="toggle-link">
+      Already a member? <span onclick="toggleForm()">Login here</span>
+    </div>
+  </div>
+  <div id="loginForm" class="hidden">
+    <h2>Stackly</h2>
+    <h3>LOGIN TO YOUR ACCOUNT</h3>
+
+    <div class="txt">
+      <input type="email" id="loginEmail" placeholder="Email Address" required />
+      <i class="fas fa-envelope"></i>
+    </div>
+
+    <div class="txt">
+      <input type="password" id="loginPassword" placeholder="Password" required />
+      <i class="fas fa-lock"></i>
+    </div>
+
+    <button class="btn" onclick="loginUser()">Login</button>
+
+    <div style="text-align: center; margin: 15px 0;">Or Login With</div>
+    <div class="social-login">
+      <a href="#" class="google"><i class="fab fa-google"></i></a>
+      <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+    <div class="toggle-link">
+      New here? <span onclick="toggleForm()">Create an account</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleForm() {
+    document.getElementById("Signup").classList.toggle("hidden");
+    document.getElementById("loginForm").classList.toggle("hidden");
+  }
+
+  function validateRegister() {
+    const name = document.getElementById("fullname").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    const terms = document.getElementById("terms").checked;
+
+    const nameRegex = /^[A-Za-z0-9 ]+$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+
+    if (!name || !email || !password || !confirmPassword) {
+      alert("All fields are required.");
+      return;
+    }
+
+    if (!nameRegex.test(name)) {
+      alert("Full Name should contain only letters and numbers (no special characters).");
+      return;
+    }
+
+    if (!passwordRegex.test(password)) {
+      alert("Password must contain at least one letter, one number, and one special character.");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+
+    if (!terms) {
+      alert("You must agree to the terms of service.");
+      return;
+    }
+
+    alert("Registration successful!");
+    toggleForm();
+  }
+
+  function loginUser() {
+    const loginEmail = document.getElementById("loginEmail").value.trim();
+    const loginPassword = document.getElementById("loginPassword").value;
+
+    if (!loginEmail || !loginPassword) {
+      alert("Please enter both email and password.");
+      return;
+    }
+    window.location.href = "header.html";
+  }
+</script>
+
+</body>
+</html>
